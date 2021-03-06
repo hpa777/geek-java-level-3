@@ -11,23 +11,24 @@ public class Box<T extends Fruit>  {
     }
 
     public float getWeight() {
-        float weight = 0;
+        float weight = 0.0f;
         for (T item : list) {
             weight+=item.getWeight();
         }
         return weight;
     }
 
-    public boolean compare(Box o) {
+    public boolean compare(Box<?> o) {
         float w1 = this.getWeight();
         float w2 = o.getWeight();
         return Math.abs(w1 - w2) < 0.00001f;
     }
 
     public void pour(Box<T> o) {
-        for (T item: o.list) {
-            this.addFruit(item);
+        if (o == this) {
+            return;
         }
+        this.list.addAll(o.list);
         o.list.clear();
     }
 }

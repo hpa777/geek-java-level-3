@@ -12,7 +12,4 @@ public abstract class Fruit {
         return weight;
     }
 
-    public void setWeight(float weight) {
-        this.weight = weight;
-    }
 }
