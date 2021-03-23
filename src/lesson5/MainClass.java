@@ -21,6 +21,7 @@ public class MainClass {
         try {
             race.getAllReady().await();
             System.out.println("ВАЖНОЕ ОБЪЯВЛЕНИЕ >>> Гонка началась!!!");
+            race.getAllReady().await();
             System.out.println(race.getWiner() + " - WIN");
             executor.shutdown();
             executor.awaitTermination(10, TimeUnit.SECONDS);
